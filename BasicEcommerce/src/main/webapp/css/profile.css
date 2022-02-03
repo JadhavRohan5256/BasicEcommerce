@@ -1,0 +1,150 @@
+@charset "ISO-8859-1";
+#profileUpdate {
+	width:100%;
+	background-color:#000000d9;
+	padding:3rem 2rem;
+	border-radius:20px;
+}
+#file {
+	display:none;
+}
+#profileUpdate>.boxContainer {
+	margin-bottom:2rem;
+}
+.file {
+	width:150px;
+	height:150px;
+	margin:0 auto;
+}
+.file img {
+	width:100%;
+	height:100%;
+	border-radius:50%;
+}
+.fileLabel {
+    opacity:0;
+}
+.fileLabel:hover {
+	opacity:9;
+}
+.fa-camera {
+	width:100%;
+	height:100%;
+	border-radius:50%;
+    background-color:#00000085;
+    padding-top:calc(50% - 1.2rem/2);
+    position:relative;
+    top:-9.7rem;
+    text-align:center;
+    color:#fff;
+}
+
+
+.boxContainer {
+	display:flex;
+	justify-content:space-between;
+	margin:0.5rem 0;
+	width:100%;
+}
+.boxContainer label {
+	font-size:1.2rem;
+	color:#29b6f6;
+}
+.boxContainer label:hover {
+	color:#0288d1;
+}
+.boxContainer input {
+	height: 2rem;
+	width:50%;
+	border-radius:5px;
+	outline:none;
+	font-size:1.2rem;
+	background-color:#00000008;
+	border:2px solid #29b6f6;
+	color:#29b6f6;
+	padding-left:2rem;
+}
+.boxContainer input:focus {
+	border-color:#388e3c;
+}
+
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
+	-webkit-appearance:none;
+	margin:0;
+}
+
+input[type=number] {
+	-moz-appearance:textfield;
+}
+#update {
+	width:80px !important;
+	margin:1rem auto;
+	padding:0;
+	color:#29b6f6;
+}
+#update:hover {
+	color:#0288d1;
+}
+#update:focus {
+	display:none;
+}
+/*error messege */
+.errorMessege{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	background-color: #ef9a9a;
+	padding: 0.5rem 1rem;
+}
+.errorCross {
+	cursor:pointer;
+}
+.errorCross div{
+	width:15px;
+	border-bottom:2px solid #000;
+}
+.errorCross div:nth-child(1) {
+	transform:rotate(45deg);
+}
+.errorCross div:nth-child(2) {
+	transform:rotate(135deg);
+}
+
+/*success messege*/
+.successMessege{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	background-color: #4caf50;
+	padding: 0.5rem 1rem;
+}
+
+.successCross {
+	cursor:pointer;
+}
+.successCross div{
+	width:15px;
+	border-bottom:2px solid #000;
+}
+.successCross div:nth-child(1) {
+	transform:rotate(45deg);
+}
+.successCross div:nth-child(2) {
+	transform:rotate(135deg);
+}
+
+
+@media only screen and (max-width:990px) {
+	.profileContainer {
+		margin-top:7rem;
+	}
+}
+@media only screen and (max-width:570px) {
+	.boxContainer {
+		flex-direction:column;
+		width:100%;
+	}
+	.boxContainer input {
+		width:100%;
+	}
+}

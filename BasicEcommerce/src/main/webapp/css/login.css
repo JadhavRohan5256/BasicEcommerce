@@ -1,0 +1,110 @@
+@charset "ISO-8859-1";
+.loginForm {
+    margin:0 auto;
+    margin-top:200px;
+    width:500px;
+    border:3px solid #039be5;
+    border-top-color: #2e7d32;
+    border-left-color: #2e7d32;
+    padding:4rem 1rem;
+    border-radius: 20px;
+}
+.header {
+    width:100%;
+}
+form .box {
+    display:flex;
+    flex-direction: column;
+    margin:auto;
+    margin-top:0.5rem;
+}
+.box input {
+    height: 2rem;
+    border-radius: 5px;
+    outline: none;
+    font-size:1.2rem;
+    border:2px solid #039be5;
+}
+.box input:focus {
+    border-top-color:#039be5;
+    border-bottom-color:#2e7d32;
+    border-left-color:#2e7d32;
+}
+.img {
+    display: flex;
+    width:100px;
+    position:relative;
+    /* top:-5rem; */
+    /* position:absolute; */
+    top:-7rem;
+    left:calc(50% - 50px);
+    border:3px solid #2e7d32;
+    border-bottom-color: #039be5;
+    border-top-color: #039be5;
+    border-radius: 100%;
+    padding:0.5rem;
+    background-color: #fff;
+    margin-bottom:-7rem;
+}
+#btn {
+    width:100px;
+    margin:auto;
+    border:2px solid #039be5;
+}
+#btn:hover {
+    border-top-color:#039be5;
+    border-bottom-color:#2e7d32;
+    border-left-color:#2e7d32;
+}
+.loginForm p {
+    text-align: center;
+}
+.loginForm p a {
+    text-decoration: none;
+    color:#039be5;
+}
+.loginForm p a:hover {
+    color:#4fc3f7;
+}
+
+.center {
+	text-align:center;
+}
+.messege {
+    text-align:center;
+    width:100%;
+    padding:0.5rem 0;
+}
+.error {
+    background-color: #ffcdd2;
+}
+.success {
+    background-color:#c8e6c9;
+}
+.cross div {
+    width:15px;
+    border-bottom: 2px solid #ef5350;
+    position: relative;
+    left: 96%;
+	top: 0.7rem;
+    cursor: pointer;
+}
+
+.cross div:nth-child(1) {
+    transform: translateY(-10px);
+    transform: rotate(45deg)
+}
+.cross div:nth-child(2) {
+    transform: rotate(135deg)
+
+}
+@media only screen and (max-width:620px) {
+    .loginForm {
+        width:100%;
+    }
+}
+@media only screen and (max-width:470px) {
+    .loginForm {
+        width:90%;
+    }
+}
