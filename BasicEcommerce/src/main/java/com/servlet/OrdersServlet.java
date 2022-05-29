@@ -75,7 +75,7 @@ public class OrdersServlet extends HttpServlet{
 				out.print(entry.getKey() + " this product are not valids");
 				return;
 			}
-			
+			// creating order 
 			OrderDetails orderDetails  = new OrderDetails();
 			
 			orderDetails.setName(name);
