@@ -35,3 +35,39 @@ errorCross.onclick = ()=>{
 	error.style.display="none";
 }
 
+
+
+
+// this function is to get uploaded file name 
+
+function getName_1(file) {
+    var output = document.getElementById('file_name_1');
+    var name = "";
+    for(var i=0; i<file.files.length; ++i) {
+        name += file.files.item(i).name;
+    }
+
+    output.innerText = name;
+}
+
+
+function getName_2(file) {
+    var output = document.getElementById('file_name_2');
+    var name = "";
+    for(var i=0; i<file.files.length; ++i) {
+        name += file.files.item(i).name;
+    }
+
+    output.innerText = name;
+}
+
+
+function getName_3(file) {
+    var output = document.getElementById('file_name_3');
+    var name = "";
+    for(var i=0; i<file.files.length; ++i) {
+        name += file.files.item(i).name;
+    }
+
+    output.innerText = name;
+}

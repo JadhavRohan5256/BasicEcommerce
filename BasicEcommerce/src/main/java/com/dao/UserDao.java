@@ -1,8 +1,11 @@
 package com.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
+import com.entities.OrderDetails;
 import com.entities.User;
 import com.entities.UserAddress;
 import com.helper.FactoryBuilder;
@@ -107,6 +110,30 @@ public class UserDao {
 			e.printStackTrace();
 		}
 		return flag;
+	}
+
+	public static boolean updateOrderDetails(int userId,List<OrderDetails> orderDetails) {
+		try {
+			String sql = "Update User SET orderDetails =:list where userId =:id";
+			Session session = FactoryBuilder.getFactory().openSession();
+			session.beginTransaction();
+			Query query = session.createQuery(sql);
+			query.setParameter("list", orderDetails);
+			query.setParameter("id", userId);
+			int id = query.executeUpdate();
+			session.getTransaction().commit();
+			session.close();
+			if(id >= 1) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return false;
 	}
 	
 }

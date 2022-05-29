@@ -14,6 +14,7 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
     <!-- This is hibernate jar file configuration -->
     <dependency>
     	<groupId>org.hibernate</groupId>
@@ -29,6 +30,12 @@
     </dependency>
     
     
+    <!-- This is razorpay connection jar file configuration -->
+    <dependency>
+		<groupId>com.razorpay</groupId>
+		<artifactId>razorpay-java</artifactId>
+		<version>1.3.9</version>
+	</dependency>
   </dependencies>
   <build>
     <finalName>BasicEcommerce</finalName>

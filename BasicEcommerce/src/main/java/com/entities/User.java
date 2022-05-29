@@ -1,9 +1,13 @@
 package com.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.OneToOne;
@@ -23,6 +27,10 @@ public class User {
 	private String userPro;
 	@OneToOne(fetch = FetchType.EAGER)
 	private UserAddress userAddress;
+//	
+//	@OneToMany(mappedBy = "users",fetch = FetchType.EAGER)
+//	private List<OrderDetails> orderDetails = new ArrayList<OrderDetails>();
+	
 	private int userType;
 	
 	
@@ -144,6 +152,17 @@ public class User {
 		this.userAddress = userAddress;
 	}
 	
+	
+	
+	
+
+//	public List<OrderDetails> getOrderDetails() {
+//		return orderDetails;
+//	}
+//
+//	public void setOrderDetails(List<OrderDetails> orderDetails) {
+//		this.orderDetails = orderDetails;
+//	}
 
 	public int getUserType() {
 		return userType;
@@ -159,6 +178,19 @@ public class User {
 				+ userEmail + ", birthDate=" + birthDate + ", userPassword=" + userPassword + ", userPhone=" + userPhone
 				+ ", userPro=" + userPro + ", userAddress=" + userAddress + ", userType=" + userType + "]";
 	}
+
+//	@Override
+//	public String toString() {
+//		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", userEmail="
+//				+ userEmail + ", birthDate=" + birthDate + ", userPassword=" + userPassword + ", userPhone=" + userPhone
+//				+ ", userPro=" + userPro + ", userAddress=" + userAddress + ", orderDetails=" + orderDetails
+//				+ ", userType=" + userType + "]";
+//	}
+
+	
+
+	
+	
 	
 	
 }

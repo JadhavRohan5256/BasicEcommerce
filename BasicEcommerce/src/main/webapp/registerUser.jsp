@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page errorPage="error_page.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,9 +56,13 @@
                     <input type="password" name="pass" id="pass" autocomplete="off">
                 </div>
                 <div class="box">
-                    <label for="profileImage">Profile Image</label>
-                    <input type="file" name="profileImage" id="profileImage">
-                </div>
+		            <input type="file" name="profileImage" id="profileImage" multiple onchange="getName_1(this)">
+		            <label for="profileImage">
+		                <span>Browse</span>
+		                <span id="file_name_1">Select Profile</span>
+		            </label>
+        		</div>
+               
                 <div class="box center">
                 	Address Details:
                 </div>
@@ -86,8 +91,10 @@
         </div>
     </section>
 	<script src="js/jquery.js"></script>
-	<script src="js/index.js"></script>
+	<!-- <script src="js/index.js"></script> -->
 	<script src="js/registerUser.js"></script>
 	<script src="js/header.js"></script>
+	<script src="js/cart.js"></script>
+	
 </body>
 </html>

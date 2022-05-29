@@ -4,6 +4,7 @@
 <%@page import="com.dao.ProductDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page errorPage="error_page.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +29,7 @@
 						List<ProductPhotos> lists = product.getProductPhotos();
 						for(ProductPhotos p:lists){
 					%>
-						<img alt="" class="shortImg" src="UploadedImage/ProductImg/<%=p.getProductPhotosName()%>" onclick="gallery(this);">
+						<img alt="productImg not find" class="shortImg" src="UploadedImage/ProductImg/<%=p.getProductPhotosName()%>" onclick="gallery(this);">
 					<%} %>
 				</div>
 				<div class="mainImg">
@@ -54,7 +55,12 @@
 												<%=product.getProductPrice() %>,
 												<%=product.getProductDiscount() %>,
 												<%=product.getAfterDiscountPrice()%>)" class="addProductToCart">Add to Cart</button>
-				<button class="buy">Buy Now</button>
+				<a href="#" onclick="addCart(<%=product.getProductId()%>,
+												'<%=product.getProductTitle()%>',
+												'<%=product.getProductPhotos().get(0).getProductPhotosName() %>',
+												<%=product.getProductPrice() %>,
+												<%=product.getProductDiscount() %>,
+												<%=product.getAfterDiscountPrice()%>);" class="buy">Buy Now</a>
 			</div>
 		</div>
 		<%} %>
@@ -108,7 +114,8 @@
 	</section>
 	<script src="js/jquery.js"></script>
 	<script src="js/product.js"></script>
-	<script src="js/index.js"></script>
+	<!-- <script src="js/index.js"></script> -->
 	<script src="js/header.js"></script>
+	<script src="js/cart.js"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@ public class SearchServlet extends HttpServlet{
 	protected void service(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException {
 		String search = req.getParameter("search");
 		if(!search.isEmpty()) {
-			req.getRequestDispatcher("index.jsp").forward(req, res);
+			req.getRequestDispatcher("homePage").forward(req, res);
 		}
 	}
 }

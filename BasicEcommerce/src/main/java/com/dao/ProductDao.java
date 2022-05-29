@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;
-
-import com.entities.Category;
 import com.entities.Product;
 import com.entities.ProductPhotos;
 import com.helper.FactoryBuilder;
@@ -106,5 +104,38 @@ public class ProductDao {
 		}
 		
 		return cnt;
+	}
+	
+	public static List<Product> getProductByLimit(int offset,int limits) {
+		List<Product> product = null;
+		try {
+			String sql = "from Product";
+			Session session = FactoryBuilder.getFactory().openSession();
+			Query query = session.createQuery(sql);
+			query.setFirstResult(offset);
+			query.setMaxResults(limits);
+			product = query.getResultList();
+			
+			return product;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return product;
+	}
+	
+	public static Product getProductById(int id) {
+		Product  product = null;
+		try {
+			String sql = "from Product where productId=:id";
+			Session session = FactoryBuilder.getFactory().openSession();
+			Query query = session.createQuery(sql);
+			query.setParameter("id", id);
+			product = (Product)query.uniqueResult();
+			session.close();
+			return product;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return product;
 	}
 }

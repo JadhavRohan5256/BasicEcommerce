@@ -7,7 +7,11 @@
 <section class="header">
         <div class="container navBar">
             <div class="category">
-               <h3> <a href="homePage">Logo</a></h3>
+               <h3> 
+               	 	<a href="homePage" id="brandLogo">
+               			<img alt="logo" src="img/logo.png">
+               		</a>
+               </h3>
                 <div class="toggle">
                     <div></div>
                     <div></div>
@@ -63,7 +67,11 @@
             </div>
             <div class="loginSection">
                 <ul>
-                    <li><a href="#" id="cart">Cart <span class="totalCartItems"></span></a></li>
+                    <li>
+                    	<a href="#" id="cart">
+                     		<img alt="cart" src="img/cart-48.png"> <span class="totalCartItems"></span>
+                     	</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -78,7 +86,7 @@
 		<section class="cartsBox containe">
 			<div class="cartValue">
 				<div class="topCart">
-					<h2> </h2>
+					<h3> </h3>
 				</div>
 				<section class="scrollContainer">
 				<!-- this is dynamic product of cart start -->

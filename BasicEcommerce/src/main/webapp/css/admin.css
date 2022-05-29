@@ -88,6 +88,10 @@ body {
 	margin: 1rem 0;
 }
 
+.info a {
+	text-decoration:none;
+	color:#000;
+}
 .productDetails .box {
 	width: 450px;
 	height: 300px;
@@ -122,7 +126,11 @@ body {
 .categoryForm {
 	width: 500px;
 	margin: 0 auto;
-	background-color: #eeeeee;
+	background-color: #eeeeee; 
+	border-top:2px solid #03a9f4;
+	border-left:2px solid #03a9f4;
+	border-right:2px solid #2e7d32;
+	border-bottom:2px solid #2e7d32;
 	padding: 4rem 2rem;
 	border-radius: 10px;
 	position: fixed;
@@ -133,8 +141,12 @@ body {
 
 .proForm {
 	width: 70%;
-	margin: 0 auto;
-	background-color: #eeeeee;
+	margin: 1rem auto;
+	/*background-color: #eeeeee;*/
+	border-top:2px solid #03a9f4;
+	border-left:2px solid #03a9f4;
+	border-right:2px solid #2e7d32;
+	border-bottom:2px solid #2e7d32;
 	padding: 4rem 2rem;
 	border-radius: 10px;
 	/*position: fixed;
@@ -155,10 +167,12 @@ body {
 	margin: 0.5rem 0;
 	border-radius: 10px;
 	outline: none;
+	border: 2px solid #03a9f4;
+	padding:0 1rem;
 }
 
 .formBox input:focus {
-	border: 2px solid #03a9f4;
+	border: 2px solid #2e7d32;
 }
 
 .formBox textarea {
@@ -166,10 +180,12 @@ body {
 	font-size: 1.2rem;
 	margin: 0.5rem 0;
 	border-radius: 10px;
+	border: 2px solid #03a9f4;
+	padding:0 1rem;
 }
 
 .formBox textarea:focus {
-	border: 2px solid #03a9f4;
+	border:0 solid #2e7d32;
 }
 
 .crossBar {
@@ -199,10 +215,11 @@ body {
 	font-size: 1.2rem;
 	border-radius: 10px;
 	margin: 0.5rem 0;
+	border: 2px solid #03a9f4;
 }
 
 #category:focus {
-	border: 2px solid #03a9f4;
+	border: 2px solid #2e7d32;
 }
 
 .crossBar2 {
@@ -228,6 +245,58 @@ body {
 }
 
 
+/*
+	input file css
+*/
+[type="file"] {
+    position: absolute;
+    opacity: 0;
+}
+
+[type="file"] + label {
+    display: inline-block;
+    width:100%;
+    border:2px solid #03a9f4;
+    border-radius:5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin:0.5rem 0;
+}
+[type="file"] + label:focus {
+	border-color:#2e7d32;
+}
+
+[type="file"] + label span:first-child {
+    font-size:1.2rem;
+    border-right: 2px solid #03a9f4;
+    padding:0.2rem;
+    background-color: #03a9f4;
+    cursor: pointer;
+    color:#fff;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    margin-top: -0.05rem;
+    margin-left: -0.05rem;
+}
+
+[type="file"] + label span:first-child:focus {
+	border-color:#2e7d32;
+	background-color:#2e7d32;
+}
+
+[type="file"] + label span:first-child:hover {
+    color:#ffffffeb;
+}
+
+[type="file"] + label span:last-child {
+	margin-left:1rem;
+	overflow:hidden;
+}
+/*input css end*/
+
+
+/* responsive layout start */
 @media only screen and (max-width:990px) {
 	.categoryForm {
 		top:100px;

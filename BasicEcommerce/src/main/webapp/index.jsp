@@ -4,6 +4,7 @@
 <%@page import="com.helper.FactoryBuilder"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page errorPage="error_page.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,9 +63,18 @@
 						<img alt="productImg" src="UploadedImage/ProductImg/<%=product.getProductPhotos().get(0).getProductPhotosName()%>">
 					</a>
 					<div class="bottom">
-						<h3 class="title">
-							<a href="product?productname=<%=product.getProductTitle()%>"><%=product.getProductTitle() %></a>
-						</h3>
+						<h4 class="title">
+							<a href="product?productname=<%=product.getProductTitle()%>">
+								<%
+									if(product.getProductTitle().length() > 30) {
+										out.print(product.getProductTitle().substring(0,30) + "...");
+									}
+									else {
+										out.print(product.getProductTitle());
+									}
+								%>
+							</a>
+						</h4>
 						<p class="desc">
 						<%
 							if(product.getProductDesc().length()>50)
@@ -99,10 +109,9 @@
 			%>
 			</div>
 	</section>
-	
-	
 	<script src="js/jquery.js"></script>
-	<script src="js/index.js"></script>
+	<!-- <script src="js/index.js"></script> -->
 	<script src="js/header.js"></script>
+	<script src="js/cart.js"></script>
 </body>
 </html>

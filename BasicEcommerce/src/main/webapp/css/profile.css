@@ -85,9 +85,7 @@ input[type=number] {
 #update:hover {
 	color:#0288d1;
 }
-#update:focus {
-	display:none;
-}
+
 /*error messege */
 .errorMessege{
 	display:flex;

@@ -1,0 +1,88 @@
+.cartsBox {
+    background-color: transparent !important;
+}
+.topCart {
+    background-color: transparent !important;
+}
+
+.cartValue {
+	border-right:3px solid #808080;
+	padding-right:3rem;
+}
+
+/*cart css */
+.scrollContainer {
+	max-height:250px !important;
+}
+
+.cartPriceDetails {
+  width: 100% !important;
+}
+/*order shipping form start */
+.addressForm {
+	border:1px solid #000;
+    width: 40%;
+    padding:3rem;
+    border-radius:15px;
+}
+form h3 {
+	text-align:center;
+}
+form .box {
+  display: flex;
+  flex-direction: column;  
+}
+
+
+.box input {
+	height:2rem;
+	border-radius:5px;
+	outline:none;
+	font-size:1.2rem;
+}
+.box textarea {
+	outline:none;
+	border-radius:5px;
+	font-size:1.2rem;
+}
+.box label {
+	margin:0.5rem 0;
+	font-size:1.2rem;
+}
+
+input[type="submit"] {
+	width:100px;
+	font-size:1rem;
+	margin-right:1rem;
+	border: 1px solid #388e3c;
+	color: #388e3c;
+	background-color:transparent;
+}
+input[type="submit"]:hover {
+	background-color: #388e3c;
+	color:#000;
+	padding:0.5rem;
+}
+.btnBox {
+	display: flex !important;
+	flex-direction: row !important;
+	margin:1rem 0;
+	justify-content:center;
+	align-items:center;
+}
+.box a {
+	border:1px solid #039be5;
+	padding:0.5rem;
+	display:inline-block;
+	border-radius:5px;
+	color:#039be5;
+	text-decoration:none;
+}
+.box a:hover {
+	background-color:#039be5;
+	color:#fff;
+}
+
+#checkBtn {
+	display:none;
+}

@@ -98,6 +98,54 @@ form .box {
     transform: rotate(135deg)
 
 }
+
+/*
+	input file css
+*/
+[type="file"] {
+    position: absolute;
+    opacity: 0;
+}
+
+[type="file"] + label {
+    display: inline-block;
+    width:100%;
+    border:2px solid #03a9f4;
+    border-radius:5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin:0.5rem 0;
+}
+[type="file"] + label:focus {
+	border-color:#2e7d32;
+}
+
+[type="file"] + label span:first-child {
+    font-size:1.2rem;
+    border-right: 2px solid #03a9f4;
+    padding:0.2rem;
+    background-color: #03a9f4;
+    cursor: pointer;
+    color:#fff;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+[type="file"] + label span:first-child:focus {
+	border-color:#2e7d32;
+	background-color:#2e7d32;
+}
+
+[type="file"] + label span:first-child:hover {
+    color:#ffffffeb;
+}
+
+[type="file"] + label span:last-child {
+	margin-left:1rem;
+	overflow:hidden;
+}
+/*input css end*/
 @media only screen and (max-width:620px) {
     .loginForm {
         width:100%;

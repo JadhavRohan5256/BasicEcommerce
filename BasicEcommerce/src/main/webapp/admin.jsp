@@ -4,6 +4,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.dao.UserDao"%>
 <%@page import="com.entities.User"%>
+<%@page errorPage="error_page.jsp" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%
@@ -11,13 +12,13 @@
 	User user = (User)session.getAttribute("userDetails");
 	if(user == null) {
 		request.setAttribute("messeges", "You are not logged!");
-		request.getRequestDispatcher("loginDetails.jsp").forward(request, response);
+		request.getRequestDispatcher("loginPage").forward(request, response);
 	}
 	else {
 		int type = user.getUserType();
 	    if(user != null && type == 0) {
 			request.setAttribute("messeges", "You have not access of this page!");
-			request.getRequestDispatcher("loginDetails.jsp").forward(request, response);
+			request.getRequestDispatcher("loginPage").forward(request, response);
 		}
 	}
 %>
@@ -67,17 +68,19 @@ if(messege != null){
 	<sections>
 		<div class="info">
 			<div class="box">
-				<img src="img/man.png" alt="fsdf">
+				<img src="img/users.png" alt="fsdf">
 				<h2>Users (<%=UserDao.getCount()%>)</h2>
 			</div>
 			<div class="box">
 				<img alt="png" src="img/category.png">
 				<h2>Categorys (<%=CategoryDao.getCount()%>)</h2>
 			</div>
-			<div class="box">
-				<img alt="png" src="img/product.png">
-				<h2>Products (<%=ProductDao.getCount()%>)</h2>
-			</div>
+			<a href="all_products">
+				<div class="box">
+					<img alt="png" src="img/product.png">
+					<h2>Products (<%=ProductDao.getCount()%>)</h2>
+				</div>
+			</a>
 		</div>
 		<div class="productDetails">
 			<div class="box">
@@ -158,17 +161,26 @@ if(messege != null){
 			 	</select>
 		 	</div>
 		 	<div class="formBox">
-			 	<label for="proImg1">Select Product Image :- 1</label>
-			 	<input type="file" name="proImg1" id="proImg1">
-		 	</div>
+	            <input type="file" name="proImg1" id="proImg1" multiple onchange="getName_1(this)">
+	            <label for="proImg1">
+	                <span>Browse</span>
+	                <span id="file_name_1">Select Product Image</span>
+	            </label>
+        	</div>
 		 	<div class="formBox">
-			 	<label for="proImg2">Select Product Image :- 2</label>
-			 	<input type="file" name="proImg2" id="proImg2">
-		 	</div>
+	            <input type="file" name="proImg2" id="proImg2" multiple onchange="getName_2(this)">
+	            <label for="proImg2">
+	                <span>Browse</span>
+	                <span id="file_name_2">Select Product Image</span>
+	            </label>
+        	</div>
 		 	<div class="formBox">
-			 	<label for="proImg3">Select Product Image :- 3</label>
-			 	<input type="file" name="proImg3" id="proImg3">
-		 	</div>
+	            <input type="file" name="proImg3" id="proImg3" multiple onchange="getName_3(this)">
+	            <label for="proImg3">
+	                <span>Browse</span>
+	                <span id="file_name_3">Select Product Image</span>
+	            </label>
+        	</div>
 		 	<div class="formBox">
 			 	<label for="proDesc">Product Description</label>
 			 	<textarea rows="" cols="" name="proDesc" id="proDesc" placeholder="Product Description..."></textarea>
@@ -183,6 +195,7 @@ if(messege != null){
 	<script src="js/jquery.js" type="text/javascript"></script>
 	<script src="js/index.js" type="text/javascript"></script>
 	<script src="js/header.js" type="text/javascript"></script>
+	<script src="js/cart.js" type="text/javascript"></script>
 	<script src="js/admin.js" type="text/javascript"></script>
 </body>
 </html>

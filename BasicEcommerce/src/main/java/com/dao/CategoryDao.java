@@ -41,6 +41,20 @@ public class CategoryDao {
 		return list;
 	}
 	
+	public static Category getCategory(int id) {
+		Category category = null;
+		try {
+			Session session =FactoryBuilder.getFactory().openSession();
+			String sql = "from Category where categoryId =:i";
+			Query query = session.createQuery(sql);
+			query.setParameter("i", id);
+			category = (Category)query.uniqueResult();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return category;
+	}
+	
 	public static long getCount() {
 		long cnt = 0;
 		try {

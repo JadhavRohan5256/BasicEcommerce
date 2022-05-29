@@ -96,7 +96,7 @@ public class RegisterServlet extends HttpServlet{
 		if(messege != null) {
 			out.println(messege);
 			req.setAttribute("messeges", messege);
-			req.getRequestDispatcher("registerUser.jsp").forward(req, res);
+			req.getRequestDispatcher("registerPage").forward(req, res);
 			return;	
 		}
 		
@@ -140,7 +140,7 @@ public class RegisterServlet extends HttpServlet{
 		if(flag) {
 			HttpSession httpSession = req.getSession();
 			httpSession.setAttribute("userDetails", user);
-			req.getRequestDispatcher("index.jsp").forward(req, res);
+			req.getRequestDispatcher("homePage").forward(req, res);
 		}
 	}
 }

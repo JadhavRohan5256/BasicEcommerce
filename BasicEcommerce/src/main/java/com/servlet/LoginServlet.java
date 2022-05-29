@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 		 */
 		if(messege != null) {
 			req.setAttribute("messeges", messege);
-			req.getRequestDispatcher("loginDetails.jsp").forward(req,res);
+			req.getRequestDispatcher("loginPage").forward(req,res);
 		}
 		else if(user.getUserType() == 1) {
 			/**
@@ -51,13 +51,13 @@ public class LoginServlet extends HttpServlet {
 			 */
 			HttpSession httpSession = req.getSession();
 			httpSession.setAttribute("userDetails", user);
-			req.getRequestDispatcher("admin.jsp").forward(req,res);
+			req.getRequestDispatcher("adminPannel").forward(req,res);
 			return;
 		}
 		else{
 			HttpSession httpSession =  req.getSession();
 			httpSession.setAttribute("userDetails", user);
-			req.getRequestDispatcher("index.jsp").forward(req, res);
+			req.getRequestDispatcher("homePage").forward(req, res);
 		}
 	}
 }

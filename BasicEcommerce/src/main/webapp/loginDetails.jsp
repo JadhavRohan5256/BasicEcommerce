@@ -1,6 +1,7 @@
 <%@page import="com.helper.FactoryBuilder"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page errorPage="error_page.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +35,7 @@
                 </div>
                 <div class="box">
                     <label for="pass">Password</label>
-                    <input type="password" name="pass" id="pass" value="rohan123">
+                    <input type="password" name="pass" id="pass" value="rohanJadhav">
                 </div>
                 <div class="box">
                     <input type="submit" value="Sign In" id="btn">
@@ -46,7 +47,7 @@
 	<!-- login form  seciton  end-->
 	<script src="js/jquery.js"></script>
 	<script src="js/header.js"></script>
-	<script src="js/index.js"></script>
+	<script src="js/cart.js"></script>
 	<script src="js/loginDetails.js"></script>
 </body>
 </html>

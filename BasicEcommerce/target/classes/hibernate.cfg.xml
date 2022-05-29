@@ -9,13 +9,15 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="hbm2ddl.auto">update</property>
-        <property name="show_sql">true</property>
-        <property name="format_sql">true</property>
+        <property name="show_sql">false</property>
+        <property name="format_sql">false</property>
         <!-- This All Entities Class Mapping to Hibernate -->
         <mapping class="com.entities.Category"/>
         <mapping class="com.entities.Product"/>
         <mapping class="com.entities.ProductPhotos"/>
         <mapping class="com.entities.User"/>
         <mapping class="com.entities.UserAddress"/>
+        <mapping class="com.entities.OrderDetails"/>
+     
     </session-factory>
 </hibernate-configuration>

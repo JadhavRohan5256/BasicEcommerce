@@ -43,6 +43,7 @@ public class ProfileUpdateServlet extends HttpServlet{
 		PrintWriter out = res.getWriter();
 		HttpSession session = req.getSession();
 		User userSession = (User) session.getAttribute("userDetails");
+		
 		User user = new User();
 		user.setUserId(userSession.getUserId());
 		user.setFirstName(firstName);
@@ -84,12 +85,12 @@ public class ProfileUpdateServlet extends HttpServlet{
 			}
 			//when profile successfully updated then sending success messege in profileView.jsp
 			req.setAttribute("messege", "1");
-			req.getRequestDispatcher("profileView.jsp").forward(req, res);
+			req.getRequestDispatcher("profile").forward(req, res);
 		}
 		else {
 			// if some error occured then sending to the profileView.jsp
 			req.setAttribute("messege", "Profile not updated due some resion");
-			req.getRequestDispatcher("profileView.jsp").forward(req, res);
+			req.getRequestDispatcher("profile").forward(req, res);
 		}
 		
 	}

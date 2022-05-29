@@ -1,6 +1,8 @@
+<%@page import="com.dao.UserDao"%>
 <%@page import="com.entities.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page errorPage="error_page.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,16 +14,18 @@
 </head>
 <body>
 	<%@include file="componets/header.jsp" %>
+	<%
+		User user = (User)session.getAttribute("userDetails");
+		if(user != null) {
+			
+	%>
 	<section class="container">
 		<div class="profileContainer">
-			<%
-			User user = (User)session.getAttribute("userDetails");
-			if(user != null) {
-			%>
 			<form action="profileUpdate" method="post" enctype="multipart/form-data" id="profileUpdate" >
+				
 			<%
-			  String messege = (String)request.getAttribute("messege");
-			  if(messege == "1" ){
+				String messege = (String)request.getAttribute("messege");
+				if(messege == "1") {
 			%>
 				<div class="successMessege">
 					Profile Successfully Updated
@@ -31,24 +35,28 @@
 					</div>
 				</div>
 			<%
-			  }
-			  else if(messege != null){
+				
+				Thread.sleep(2000);
+				request.setAttribute("messeges", "Please login again!");
+				request.getRequestDispatcher("/loginPage").forward(request, response);
+				}
+				else if(messege != null) {
 			%>
-				<div class="errorMessege">
-					<%=messege %>
+				 <div class="errorMessege">
+				 	<%=messege %>
 					<div class="errorCross">
 						<div></div>
 						<div></div>
 					</div>
-				</div>
+				</div> 
 			<%
-			  }
+				}
 			%>
 				<div class="boxContainer">
 					<div class="file">
 						<img alt="PrifleImg" src="UploadedImage/Profile/<%=user.getUserPro()%>">
 						<label for="file" class="fileLabel"><i class="fa fa-camera"></i></label>
-						<input type="file" name="file" id="file" value="<%=user.getUserPro()%>"> 
+						<input type="file" name="file" id="file" value=""> 
 					</div>
 				</div>
 				
@@ -80,19 +88,19 @@
 					
 					<div class="boxContainer">
 						<label for="city">City</label>
-						<input type="text" name="city" id="city" value="<%=user.getUserAddress().getUserAddressCity() %>">
+						<input type="text" name="city" id="city" value="<%=user.getUserAddress().getUserAddressCity()%>">
 					</div>
 					<div class="boxContainer">
 						<label for="pinCode">Pin Code</label>
-						<input type="text" name="pinCode" id="pinCode" value="<%=user.getUserAddress().getUserAddressPinCode() %>">
+						<input type="text" name="pinCode" id="pinCode" value="<%=user.getUserAddress().getUserAddressPinCode()%>">
 					</div>
 					<div class="boxContainer">
 						<label for="state">State</label>
-						<input type="text" name="state" id="state" value="<%=user.getUserAddress().getUserAddressState() %>">
+						<input type="text" name="state" id="state" value="<%=user.getUserAddress().getUserAddressState()%>">
 					</div>
 					<div class="boxContainer">
 						<label for="house">House No/Appartment No</label>
-						<input type="text" name="house" id="house" value="<%=user.getUserAddress().getUserAddressHouseNo() %>">
+						<input type="text" name="house" id="house" value="<%=user.getUserAddress().getUserAddressHouseNo()%>">
 					</div>
 					
 					<div class="boxContainer">
@@ -101,18 +109,18 @@
 					
 				</div>
 			</form>
-			<%
-			}
-			else {
-				out.println("<h1 style='text-align:center;'>You are not logged</h1>");
-			}
-			%>
 		</div>
+		<%
+		} else {
+			request.setAttribute("messeges", "You are not logged!");
+			request.getRequestDispatcher("/loginPage").forward(request, response);
+		}
+		%>
 	</section>
 	
 	<script src="js/jquery.js"></script>
 	<script src="js/header.js"></script>
-	<script src="js/index.js"></script>
+	<script src="js/cart.js"></script>
 	<script src="js/profile.js"></script>
 	<script src="https://use.fontawesome.com/73abffe420.js"></script>
 </body>

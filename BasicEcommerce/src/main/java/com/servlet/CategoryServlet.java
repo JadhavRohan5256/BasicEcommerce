@@ -61,7 +61,7 @@ public class CategoryServlet extends HttpServlet{
 			 */
 
 		req.setAttribute("messege",messege);
-		req.getRequestDispatcher("admin.jsp").forward(req, res);
+		req.getRequestDispatcher("adminPannel").forward(req, res);
 		
 		
 	}
